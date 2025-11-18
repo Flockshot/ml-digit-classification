@@ -73,7 +73,7 @@ This result demonstrates a strong, well-tuned model. The extremely tight confide
 1.  Clone the repository.
 2.  Ensure the MNIST data files (`mnist_train.data`, `mnist_validation.data`, `mnist_test.data`) are in the `data/` subdirectory.
 3.  Run the main classifier script:
-    ```bash
-    python digit_classifier.py
-    ```
+    ```bash
+    python digit_classifier.py
+    ```
 4.  The script will automatically load the data, run the training and evaluation pipeline for the defined hyperparameter configurations, and print the final performance metrics for each.
