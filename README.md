@@ -6,9 +6,7 @@ Developed, trained, and rigorously evaluated a Multilayer Perceptron (MLP) neura
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C.svg?logo=pytorch&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-Data_&_Math-4D77CF.svg?logo=numpy&logoColor=white)
 
-> **[Image: A grid of handwritten digits from the MNIST dataset]**
->
-> *(**Developer Note:** Place an image showing examples of the MNIST data here.)*
+![Image: A grid of handwritten digits from the MNIST dataset](.media/mnist.png)
 
 ---
 
@@ -43,9 +41,24 @@ The training loop implements **Early Stopping**. It monitors the validation loss
 
 After running the full grid search and statistical validation, the optimal model configuration was definitively identified.
 
-> **[Image: Table of Hyperparameter Grid Search Results]**
->
-> *(**Developer Note:** Place the table from your `report.pdf` here, showing the mean accuracy and 95% CI for each configuration.)*
+| Activation Function | Hidden Layers | Neurons | Learning Rate | Mean Accuracy (%) | Std | 95% Confidence Interval |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Sigmoid | 4 | 128 | 0.001 | 34.024 | 15.857 | 24.196 - 43.852 |
+| Sigmoid | 4 | 128 | 0.0001 | 18.385 | 3.550 | 16.184 - 20.586 |
+| Sigmoid | 4 | 256 | 0.001 | 52.787 | 14.633 | 43.717 - 61.857 |
+| Sigmoid | 4 | 256 | 0.0001 | 27.605 | 9.204 | 21.900 - 33.310 |
+| Sigmoid | 6 | 128 | 0.001 | 11.034 | 0.632 | 10.642 - 11.426 |
+| Sigmoid | 6 | 128 | 0.0001 | 11.350 | 0.000 | 11.350 - 11.350 |
+| Sigmoid | 6 | 256 | 0.001 | 13.500 | 0.000 | 11.350 - 11.350 |
+| Sigmoid | 6 | 256 | 0.0001 | 11.350 | 0.000 | 11.350 - 11.350 |
+| Tanh | 4 | 128 | 0.001 | 77.134 | 2.347 | 75.680 - 78.588 |
+| Tanh | 4 | 128 | 0.0001 | 75.978 | 2.531 | 74.409 - 77.547 |
+| **Tanh** | **4** | **256** | **0.001** | **81.537** | **1.794** | **80.425 - 82.649** |
+| Tanh | 4 | 256 | 0.0001 | 81.151 | 1.167 | 80.428 - 81.874 |
+| Tanh | 6 | 128 | 0.001 | 68.202 | 2.707 | 66.524 - 69.880 |
+| Tanh | 6 | 128 | 0.0001 | 67.765 | 1.959 | 66.551 - 68.979 |
+| Tanh | 6 | 256 | 0.001 | 76.767 | 2.214 | 75.395 - 78.139 |
+| Tanh | 6 | 256 | 0.0001 | 77.157 | 1.769 | 76.061 - 78.253 |
 
 ### Optimal Configuration
 
@@ -73,7 +86,7 @@ This result demonstrates a strong, well-tuned model. The extremely tight confide
 1.  Clone the repository.
 2.  Ensure the MNIST data files (`mnist_train.data`, `mnist_validation.data`, `mnist_test.data`) are in the `data/` subdirectory.
 3.  Run the main classifier script:
-    ```bash
-    python digit_classifier.py
-    ```
+    ```bash
+    python digit_classifier.py
+    ```
 4.  The script will automatically load the data, run the training and evaluation pipeline for the defined hyperparameter configurations, and print the final performance metrics for each.
